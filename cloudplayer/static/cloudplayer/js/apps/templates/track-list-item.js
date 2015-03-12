@@ -1,0 +1,3 @@
+<span>
+<%- title %> <%- album %>
+</span>

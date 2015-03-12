@@ -1,0 +1,48 @@
+#wrapper{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+}
+#main-content{
+	width: 100%;
+	padding-left: 220px;
+	padding-bottom: 200px;
+}
+#sidebar{
+	width: 220px;
+	height: 100%;
+	position: fixed;
+	left: 0px;
+	background-color: #252525;
+}
+
+.bottom-strip{
+	width: 100%;
+	height: 200px;
+	background-color: #fff;
+	position: fixed;
+	bottom: 0px;
+}
+.player{
+	width: 100%;
+	height: 200px;
+	background-color: #555;
+	bottom: 0;
+	position: absolute;
+}
+.file-dropzone{
+	width: 90%;
+	height: 200px;
+	display: inline-block;
+}
+.file-dropzone h1{
+	color: #999;
+}
+.file-dropzone form{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+}

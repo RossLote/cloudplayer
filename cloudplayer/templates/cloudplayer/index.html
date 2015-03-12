@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div id="sidebar">
+	<div id="menu-region">
+		
+	</div>
+	<div class='player' id="player-region">
+		
+	</div>
+</div>
+<div id="main-content">
+	<div id="main-region">
+		
+	</div>
+	<div class="bottom-strip">
+		
+		<div class="file-dropzone" id="dropzone">
+			<h1 class="text-center">Drop files here</h1>
+			<form action="{% url 'music:upload' %}">
+				{% csrf_token %}
+			</form>
+		</div>
+	</div>
+</div>
+
+{% endblock content %}
+
+{% block templates %}
+
+<script type="text/template" id="track-list-item-tmpl">{% include 'cloudplayer/_templates/track-list-item.html' %}</script>
+<script type="text/template" id="track-list-tmpl">{% include 'cloudplayer/_templates/track-list.html' %}</script>
+
+<script type="text/template" id="album-list-item-tmpl">{% include 'cloudplayer/_templates/album-list-item.html' %}</script>
+<script type="text/template" id="album-list-tmpl">{% include 'cloudplayer/_templates/album-list.html' %}</script>
+
+<script type="text/template" id="playlist-list-item-tmpl">{% include 'cloudplayer/_templates/playlist-list-item.html' %}</script>
+<script type="text/template" id="playlist-list-tmpl">{% include 'cloudplayer/_templates/playlist-list.html' %}</script>
+
+<script type="text/template" id="menu-list-item-tmpl">{% include 'cloudplayer/_templates/menu-list-item.html' %}</script>
+<script type="text/template" id="menu-list-tmpl">{% include 'cloudplayer/_templates/menu-list.html' %}</script>
+
+<script type="text/template" id="player-tmpl">{% include 'cloudplayer/_templates/player.html' %}</script>
+
+{% endblock templates %}
+
+{% block scripts %}
+<script type="text/javascript" src="{% static 'cloudplayer/js/app.js' %}"></script>
+
+<script type="text/javascript" src="{% static 'cloudplayer/js/apps/player/app.js' %}"></script>
+<script type="text/javascript" src="{% static 'cloudplayer/js/apps/player/views.js' %}"></script>
+<script type="text/javascript" src="{% static 'cloudplayer/js/apps/player/controller.js' %}"></script>
+
+<script type="text/javascript" src="{% static 'cloudplayer/js/apps/tracks/app.js' %}"></script>
+<script type="text/javascript" src="{% static 'cloudplayer/js/apps/tracks/list/views.js' %}"></script>
+<script type="text/javascript" src="{% static 'cloudplayer/js/apps/tracks/list/controller.js' %}"></script>
+
+<script type="text/javascript" src="{% static 'cloudplayer/js/apps/albums/app.js' %}"></script>
+<script type="text/javascript" src="{% static 'cloudplayer/js/apps/albums/list/views.js' %}"></script>
+<script type="text/javascript" src="{% static 'cloudplayer/js/apps/albums/list/controller.js' %}"></script>
+
+<script type="text/javascript" src="{% static 'cloudplayer/js/apps/playlists/app.js' %}"></script>
+<script type="text/javascript" src="{% static 'cloudplayer/js/apps/playlists/list/views.js' %}"></script>
+<script type="text/javascript" src="{% static 'cloudplayer/js/apps/playlists/list/controller.js' %}"></script>
+
+<script type="text/javascript" src="{% static 'cloudplayer/js/apps/menu/app.js' %}"></script>
+<script type="text/javascript" src="{% static 'cloudplayer/js/apps/menu/list/views.js' %}"></script>
+<script type="text/javascript" src="{% static 'cloudplayer/js/apps/menu/list/controller.js' %}"></script>
+
+<script type="text/javascript" src="{% static 'cloudplayer/js/entities/track.js' %}"></script>
+<script type="text/javascript" src="{% static 'cloudplayer/js/entities/album.js' %}"></script>
+<script type="text/javascript" src="{% static 'cloudplayer/js/entities/playlist.js' %}"></script>
+<script type="text/javascript" src="{% static 'cloudplayer/js/entities/menu.js' %}"></script>
+<script type="text/javascript">
+	CloudPlayer.start();
+</script>
+{% endblock scripts %}

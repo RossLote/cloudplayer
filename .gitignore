@@ -1,0 +1,4 @@
+cloudplayer/settings.py
+media/*
+temp_files/*
+*.pyc
